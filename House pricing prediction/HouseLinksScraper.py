@@ -30,9 +30,10 @@ def getLinks():
         houseList = driver.find_element(By.XPATH, "//div[@data-cy='search.listing.organic']/ul/li[@data-cy='listing-item']")
         if(driver.find_element(By.XPATH, "//button[@aria-label='Pagina urmatoare']").is_displayed()):
             nextPageButton = driver.find_element(By.XPATH, "//button[@aria-label='Pagina urmatoare']")
+        break
         
     df = pd.DataFrame(list)
-    df.to_csv("HouseLinks.csv")
+    df.to_csv("..\CSV's\HouseLinks.csv")
 
 if __name__ == "__main__":
     acceptCookies()
