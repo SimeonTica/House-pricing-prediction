@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
@@ -30,10 +29,9 @@ def getLinks():
         houseList = driver.find_element(By.XPATH, "//div[@data-cy='search.listing.organic']/ul/li[@data-cy='listing-item']")
         if(driver.find_element(By.XPATH, "//button[@aria-label='Pagina urmatoare']").is_displayed()):
             nextPageButton = driver.find_element(By.XPATH, "//button[@aria-label='Pagina urmatoare']")
-        break
         
     df = pd.DataFrame(list)
-    df.to_csv("..\CSV's\HouseLinks.csv")
+    df.to_csv("..\CSVs\HouseLinks.csv")
 
 if __name__ == "__main__":
     acceptCookies()
