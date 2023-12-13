@@ -5,75 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="..\CSS\calculate.css" />
     <script defer src="script.js"></script>
-    <title>Calculează Prețul</title>
+    <title>Calculate price</title>
 </head>
 
 <body>
-    <div class="wrapper">
         <header>
-            <h1>Calculează Prețul</h1>
+            <h1>Calculate house price</h1>
         </header>
     
-        <section>
-            <h2>Introdu date despre casă</h2>
-            <form form id="predictionForm" onsubmit="event.preventDefault(); predictPrice();">
+        <section class="wrapper">
+            <h2>Enter details about your dream house:</h2>
+            <form class="form" id="predictionForm" onsubmit="event.preventDefault(); predictPrice();">
+                
+                <div class ="flexwrapper">
+                    <label for="Suprafață (m²)">Area:</label>
+                    <input type="number" id="Suprafață" name="Suprafață" required />
+                </div>
     
-                <label for="Suprafață (m²)">Suprafață:</label>
-                <input type="number" id="Suprafață" name="Suprafață" required />
+                <div class ="flexwrapper">
+                    <label for="Suprafață teren (m²)">Lot area:</label>
+                    <input type="number" id="Suprafață teren (m²)" name="Suprafață teren (m²)"required />
+                </div>
     
-                <label for="Suprafață teren (m²)">Suprafață teren (m²):</label>
-                <input type="number" id="Suprafață teren (m²)" name="Suprafață teren (m²)"required />
+                <div class ="flexwrapper">
+                    <label for="Anul construcției">Year built:</label>
+                    <input type="number" id="Anul construcției" name="Anul construcției" required />
+                </div>
     
-                <label for="Anul construcției">Anul construcției:</label>
-                <input type="number" id="Anul construcției" name="Anul construcției" required />
+                <div class ="flexwrapper">
+                    <label for="Numărul de camere">Number of rooms:</label>
+                    <input type="number" id="Numărul de camere" name="Numărul de camere" required />
+                </div>
     
-                <label for="Numărul de camere">Numărul de camere:</label>
-                <input type="number" id="Numărul de camere" name="Numărul de camere" required />
+                <div class ="flexwrapper">
+                    <label for="Tip încălzire">Type of heating:</label>
+                    <select id="Tip încălzire" name="Tip încălzire" required>
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="1">Coal and gas boiler</option>
+                        <option value="2">Central heating</option>
+                        <option value="3">Electric boiler</option>
+                        <option value="4">Electric and gas boiler</option>
+                        <option value="5">Electric and gas boiler and solar panels</option>
+                        <option value="6">Gas boiler</option>
+                        <option value="7">Centralised gas boiler</option>
+                        <option value="8">Gas boiler and solar panels</option>
+                        <option value="9">Gas boiler, heating pump</option>
+                        <option value="10">Gas boiler, stove</option>
+                        <option value="11">Heating pump</option>
+                        <option value="12">Heating pump, solar panels</option>
+                        <option value="13">Gas boiler, fireplace</option>
+                        <option value="14">Fireplace, gas boiler, centralised heating, solar panels</option>
+                        <option value="15">Geothermal heat pump</option>
+                        <option value="16">Stove</option>
+                        <option value="17">Gas boiler, stove</option>
+                        <option value="18">Centralised gas boiler, stove</option>
+                    </select>
+                </div>
     
-                <label for="Tip încălzire">Tip încălzire:</label>
-                <select id="Tip încălzire" name="Tip încălzire" required>
-                    <option value="1">centrala pe carbune. centrală pe gaz</option>
-                    <option value="2">centralizat</option>
-                    <option value="3">centrală electrică</option>
-                    <option value="4">centrală electrică. centrală pe gaz</option>
-                    <option value="5">centrală electrică. centrală pe gaz. panouri solare</option>
-                    <option value="6">centrală pe gaz</option>
-                    <option value="7">centrală pe gaz. centralizat</option>
-                    <option value="8">centrală pe gaz. panouri solare</option>
-                    <option value="9">centrală pe gaz. pompa de caldura</option>
-                    <option value="10">centrală pe gaz. sobă</option>
-                    <option value="11">pompa de caldura</option>
-                    <option value="12">pompa de caldura. panouri solare</option>
-                    <option value="13">semineu. centrală pe gaz</option>
-                    <option value="14">semineu. centrală pe gaz. panouri solare. centralizat</option>
-                    <option value="15">sistem geotermal. pompa de caldura</option>
-                    <option value="16">sobă</option>
-                    <option value="17">sobă. centrală pe gaz</option>
-                    <option value="18">sobă. centrală pe gaz. centralizat</option>
-                </select>
+                <div class ="flexwrapper">
+                    <label for="Stare">State:</label>
+                    <select id="Stare" name="Stare" required>
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="1">ready for use</option>
+                        <option value="2">requires renovations</option>
+                        <option value="3">in construction</option>
+                        <option value="4">in construction, almost finished</option>
+                        <option value="5">in construction, just started</option>
+                    </select>
+                </div>
     
-                <label for="Stare">Stare:</label>
-                <select id="Stare" name="Stare" required>
-                    <option value="1">gata de utilizare</option>
-                    <option value="2">necesită renovare</option>
-                    <option value="3">în construcție</option>
-                    <option value="4">în construcție faza avansată</option>
-                    <option value="5">în construcție faza incipientă</option>
-                </select>
-    
-                <label for="Ac">Aer condiționat:</label>
-                <select name="Ac" id="AC">
-                    <option value="1">Cu instalatie de Aer condiționat</option>
-                    <option value="2">Fara instalatie de Aer condiționat</option>
-                </select>
-                <button type="button" onclick="predictPrice()">Ghicește Prețul</button>
+                <div class ="flexwrapper">
+                    <label for="Ac">Aer condiționat:</label>
+                    <select name="Ac" id="AC">
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="1">Cu instalatie de Aer condiționat</option>
+                        <option value="2">Fara instalatie de Aer condiționat</option>
+                    </select>
+                </div>
+                <div class="buttonWrapper">
+                    <button type="button" onclick="predictPrice()">Calculate the price</button>
+                </div>
             </form>
     
             <p id="result"></p>
         </section>
     
-        <a href="index.html">Înapoi la meniul principal</a>
-    </div>
+        <a class="back" href="index.html">Go back home</a>
 </body>
 
 </html>
