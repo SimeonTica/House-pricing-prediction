@@ -1,100 +1,79 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="..\CSS\styles.css" />
+    <link rel="stylesheet" href="..\CSS\calculate.css" />
     <script defer src="script.js"></script>
     <title>Calculează Prețul</title>
 </head>
 
 <body>
-    <header>
-        <h1>Calculează Prețul</h1>
-    </header>
-
-    <section>
-        <h2>Introdu date despre casă</h2>
-        <form form id="predictionForm" onsubmit="event.preventDefault(); predictPrice();">
-
-            <label for="Suprafață">Suprafață:</label>
-            <input type="number" id="Suprafață" name="Suprafață" required />
-
-            <label for="Suprafață teren (m²)">Suprafață teren (m²):</label>
-            <input type="number" id="Suprafață teren (m²)" name="Suprafață teren (m²)"required />
-
-            <label for="Anul construcției">Anul construcției:</label>
-            <input type="number" id="Anul construcției" name="Anul construcției" required />
-
-            <label for="Numărul de camere">Numărul de camere:</label>
-            <input type="number" id="Numărul de camere" name="Numărul de camere" required />
-
-            <label for="Tip încălzire">Tip încălzire:</label>
-            <select id="Tip încălzire" name="Tip încălzire" required>
-                <option value="0">neprecizat</option>
-                <option value="1">centrala pe carbune. centrală pe gaz</option>
-                <option value="2">centralizat</option>
-                <option value="3">centrală electrică</option>
-                <option value="4">centrală electrică. centrală pe gaz</option>
-                <option value="5">centrală electrică. centrală pe gaz. panouri solare</option>
-                <option value="6">centrală pe gaz</option>
-                <option value="7">centrală pe gaz. centralizat</option>
-                <option value="8">centrală pe gaz. panouri solare</option>
-                <option value="9">centrală pe gaz. pompa de caldura</option>
-                <option value="10">centrală pe gaz. sobă</option>
-                <option value="11">pompa de caldura</option>
-                <option value="12">pompa de caldura. panouri solare</option>
-                <option value="13">semineu. centrală pe gaz</option>
-                <option value="14">semineu. centrală pe gaz. panouri solare. centralizat</option>
-                <option value="15">sistem geotermal. pompa de caldura</option>
-                <option value="16">sobă</option>
-                <option value="17">sobă. centrală pe gaz</option>
-                <option value="18">sobă. centrală pe gaz. centralizat</option>
-            </select>
-
-            <label for="Stare">Stare:</label>
-            <select id="Stare" name="Stare" required>
-                <option value="0">neprecizat</option>
-                <option value="1">gata de utilizare</option>
-                <option value="2">necesită renovare</option>
-                <option value="3">în construcție</option>
-                <option value="4">în construcție  faza avansată</option>
-                <option value="5">în construcție  faza incipientă</option>
-            </select>
-
-            <label for="Tip clădire">Tip clădire:</label>
-            <select id="Tip clădire" name="Tip clădire" required>
-                <option value="0">neprecizat</option>
-                <option value="1">case insiruite</option>
-                <option value="2">conac</option>
-                <option value="3">curte comuna</option>
-                <option value="4">rezidentiala</option>
-                <option value="5">singur in curte</option>
-            </select>
-
-            <label for="Garaj/loc de parcare">Garaj/loc de parcare:</label>
-            <select id="Garaj/loc de parcare" name="Garaj/loc de parcare" required>
-                <option value="0">neprecizat</option>
-                <option value="1">garaj</option>
-            </select>
-
-            <label for="Tip proprietate">Tip proprietate:</label>
-            <select id="Tip proprietate" name="Tip proprietate" required>
-                <option value="0">neprecizat</option>
-                <option value="1">agenție</option>
-                <option value="2">locuință nouă</option>
-                <option value="3">locuință utilizată</option>
-                <option value="4">privat</option>
-            </select>
-
-            <button type="button" onclick="predictPrice()">Ghicește Prețul</button>
-        </form>
-
-        <p id="result"></p>
-    </section>
-
-    <a href="index.html">Înapoi la meniul principal</a>
+    <div class="wrapper">
+        <header>
+            <h1>Calculează Prețul</h1>
+        </header>
+    
+        <section>
+            <h2>Introdu date despre casă</h2>
+            <form form id="predictionForm" onsubmit="event.preventDefault(); predictPrice();">
+    
+                <label for="Suprafață (m²)">Suprafață:</label>
+                <input type="number" id="Suprafață" name="Suprafață" required />
+    
+                <label for="Suprafață teren (m²)">Suprafață teren (m²):</label>
+                <input type="number" id="Suprafață teren (m²)" name="Suprafață teren (m²)"required />
+    
+                <label for="Anul construcției">Anul construcției:</label>
+                <input type="number" id="Anul construcției" name="Anul construcției" required />
+    
+                <label for="Numărul de camere">Numărul de camere:</label>
+                <input type="number" id="Numărul de camere" name="Numărul de camere" required />
+    
+                <label for="Tip încălzire">Tip încălzire:</label>
+                <select id="Tip încălzire" name="Tip încălzire" required>
+                    <option value="1">centrala pe carbune. centrală pe gaz</option>
+                    <option value="2">centralizat</option>
+                    <option value="3">centrală electrică</option>
+                    <option value="4">centrală electrică. centrală pe gaz</option>
+                    <option value="5">centrală electrică. centrală pe gaz. panouri solare</option>
+                    <option value="6">centrală pe gaz</option>
+                    <option value="7">centrală pe gaz. centralizat</option>
+                    <option value="8">centrală pe gaz. panouri solare</option>
+                    <option value="9">centrală pe gaz. pompa de caldura</option>
+                    <option value="10">centrală pe gaz. sobă</option>
+                    <option value="11">pompa de caldura</option>
+                    <option value="12">pompa de caldura. panouri solare</option>
+                    <option value="13">semineu. centrală pe gaz</option>
+                    <option value="14">semineu. centrală pe gaz. panouri solare. centralizat</option>
+                    <option value="15">sistem geotermal. pompa de caldura</option>
+                    <option value="16">sobă</option>
+                    <option value="17">sobă. centrală pe gaz</option>
+                    <option value="18">sobă. centrală pe gaz. centralizat</option>
+                </select>
+    
+                <label for="Stare">Stare:</label>
+                <select id="Stare" name="Stare" required>
+                    <option value="1">gata de utilizare</option>
+                    <option value="2">necesită renovare</option>
+                    <option value="3">în construcție</option>
+                    <option value="4">în construcție faza avansată</option>
+                    <option value="5">în construcție faza incipientă</option>
+                </select>
+    
+                <label for="Ac">Aer condiționat:</label>
+                <select name="Ac" id="AC">
+                    <option value="1">Cu instalatie de Aer condiționat</option>
+                    <option value="2">Fara instalatie de Aer condiționat</option>
+                </select>
+                <button type="button" onclick="predictPrice()">Ghicește Prețul</button>
+            </form>
+    
+            <p id="result"></p>
+        </section>
+    
+        <a href="index.html">Înapoi la meniul principal</a>
+    </div>
 </body>
 
 </html>
