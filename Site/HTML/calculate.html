@@ -22,21 +22,6 @@
                 </div>
     
                 <div class ="flexwrapper">
-                    <label for="Suprafață teren (m²)">Lot area:</label>
-                    <input type="number" id="Suprafață teren (m²)" name="Suprafață teren (m²)"required />
-                </div>
-    
-                <div class ="flexwrapper">
-                    <label for="Anul construcției">Year built:</label>
-                    <input type="number" id="Anul construcției" name="Anul construcției" required />
-                </div>
-    
-                <div class ="flexwrapper">
-                    <label for="Numărul de camere">Number of rooms:</label>
-                    <input type="number" id="Numărul de camere" name="Numărul de camere" required />
-                </div>
-    
-                <div class ="flexwrapper">
                     <label for="Tip încălzire">Type of heating:</label>
                     <select id="Tip încălzire" name="Tip încălzire" required>
                         <option value="" disabled selected>Select your option</option>
@@ -60,25 +45,28 @@
                         <option value="18">Centralised gas boiler, stove</option>
                     </select>
                 </div>
-    
+
                 <div class ="flexwrapper">
-                    <label for="Stare">State:</label>
-                    <select id="Stare" name="Stare" required>
-                        <option value="" disabled selected>Select your option</option>
-                        <option value="1">ready for use</option>
-                        <option value="2">requires renovations</option>
-                        <option value="3">in construction</option>
-                        <option value="4">in construction, almost finished</option>
-                        <option value="5">in construction, just started</option>
-                    </select>
+                    <label for="Suprafață teren (m²)">Lot area:</label>
+                    <input type="number" id="Suprafață teren (m²)" name="Suprafață teren (m²)"required />
                 </div>
     
                 <div class ="flexwrapper">
-                    <label for="Ac">Aer condiționat:</label>
+                    <label for="Anul construcției">Year built:</label>
+                    <input type="number" id="Anul construcției" name="Anul construcției" required />
+                </div>
+    
+                <div class ="flexwrapper">
+                    <label for="Numărul de camere">Number of rooms:</label>
+                    <input type="number" id="Numărul de camere" name="Numărul de camere" required />
+                </div>
+    
+                <div class ="flexwrapper">
+                    <label for="Ac">Air conditioning:</label>
                     <select name="Ac" id="AC">
                         <option value="" disabled selected>Select your option</option>
-                        <option value="1">Cu instalatie de Aer condiționat</option>
-                        <option value="2">Fara instalatie de Aer condiționat</option>
+                        <option value="1">With air conditioning</option>
+                        <option value="2">Without air conditioning</option>
                     </select>
                 </div>
                 <div class="buttonWrapper">
@@ -86,6 +74,10 @@
                 </div>
             </form>
     
+            <div class="Result">
+
+            </div>
+
             <p id="result"></p>
         </section>
     

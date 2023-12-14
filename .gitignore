@@ -1,2 +1,3 @@
 House pricing prediction/env/*
 Site/JS/express server/node_modules
+Site/PY/flask server/.venv/*

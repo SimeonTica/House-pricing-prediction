@@ -10,14 +10,23 @@ app.use(cors())
 app.use(bodyParser.json())
 app.route('/calculated')
     .post((req, res) => {
-        send = { message: 'post request for calculated page successful'};
-        res.send(send)
-        console.log(req.body)
         dataToSend = req.body;
+
+        fetch("http://localhost:7000/calculated", {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dataToSend)
+        }).then(received => received.json()).then(message => {
+            payload = {
+                price: message,
+                message: 'post request for calculated page successful'
+            }
+            res.send(payload)
+        });
     })
-    .get((req,res) => {
-        res.send("info")
-    });
 
   app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
