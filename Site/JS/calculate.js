@@ -16,9 +16,7 @@ async function postData(url = '', data){
 
 form.addEventListener("submit", e => {
 
-    answerjson = {
-        
-    };
+    answerArray = [];
 
     e.preventDefault();
     children = [...e.target.children]
@@ -31,6 +29,6 @@ form.addEventListener("submit", e => {
     });
     console.log(answerArray)
     console.log(JSON.stringify(answerArray))
-    postData("http://localhost:8000/calculated", JSON.stringify(answerArray)).then(e => console.log(e));
+    postData("http://localhost:8000/calculated", answerArray).then(e => console.log(e));
 
 });

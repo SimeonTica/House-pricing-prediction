@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="..\CSS\calculate.css" />
-    <script defer src="script.js"></script>
     <title>Calculate price</title>
 </head>
 
@@ -15,7 +14,7 @@
     
         <section class="wrapper">
             <h2>Enter details about your dream house:</h2>
-            <form class="form" id="predictionForm" onsubmit="event.preventDefault(); predictPrice();">
+            <form class="form" id="predictionForm">
                 
                 <div class ="flexwrapper">
                     <label for="Suprafață (m²)">Area:</label>
@@ -83,7 +82,7 @@
                     </select>
                 </div>
                 <div class="buttonWrapper">
-                    <button type="button" onclick="predictPrice()">Calculate the price</button>
+                    <input class="submit" type="submit" value="Calculate the price"></button>
                 </div>
             </form>
     
@@ -91,6 +90,8 @@
         </section>
     
         <a class="back" href="index.html">Go back home</a>
+
+        <script src="../JS/calculate.js"></script>
 </body>
 
 </html>
