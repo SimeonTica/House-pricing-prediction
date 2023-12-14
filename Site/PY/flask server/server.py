@@ -2,6 +2,7 @@ import pandas as pd
 
 from flask import Flask, request, Response
 from predict import *
+from graphgenerator import *
 from flask_cors import CORS
 
 import json
@@ -9,6 +10,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
+createPlots()
 etModel = ExtraTreesTrain()
 rfModel = randForestTrain()
 
